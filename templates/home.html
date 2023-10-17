@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>channels</title>
+<style>
+table, th, td {
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 4px 8px;
+}    
+
+th {
+    background-color: #ddd;
+    text-transform: Uppercase;
+}
+</style>
+</head>
+<body>
+
+<h2>List of cartoon Channels</h2>
+
+<table style="width:50%">
+    <tr>
+        <th>channel</th>
+        <th>cartoon</th>
+        <th>character</th>
+        <th>time</th>
+    </tr>
+
+    {% for i in kids %}
+    <tr>
+        <td>{{ i.channel }}</td>
+        <td>{{ i.cartoon }}</td>
+        <td>{{ i.character }}</td>
+        <td>{{ i.time }}</td>
+        {% comment %} <td>
+            <a href={% url "update" i.pk %} role="button">Update</a>
+            <a href={% url "delete" i.pk %} role="button">Delete</a>
+        </td>     {% endcomment %}
+    </tr>
+    {% endfor %} 
+    
+    <a href="{% url "add" %}" role="button" style="font-size:25px">Add</a><br><br>
+
+</table>
+</body>
+</html>   
+
+
+</body>
+</html>
+    
